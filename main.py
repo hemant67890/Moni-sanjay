@@ -1045,7 +1045,7 @@ async def stop_handler(client, message: Message):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 # 7. /moni - Moni handler for premium users
-@bot.on_message(filters.command("moni"))
+@bot.on_message(filters.command("STRANGER"))
 async def moni_handler(client: Client, m: Message):
     if m.chat.type == "private":
         user_id = str(m.from_user.id)
