@@ -1049,16 +1049,7 @@ async def stop_handler(client, message: Message):
 async def moni_handler(client: Client, m: Message):
     if m.chat.type == "private":
         user_id = str(m.from_user.id)
-        subscription_data = read_subscription_data()
-        if not any(user[0] == user_id for user in subscription_data):
-            await m.reply_text("❌ **You are not a premium user.**\nPlease upgrade your subscription! 💎")
-            return
-    else:
-        channels = read_channels_data()
-        if str(m.chat.id) not in channels:
-            await m.reply_text("❗ **You are not a premium user.**\nSubscribe now for exclusive access! 🚀")
-            return
-
+        
     editable = await m.reply_text('💾 **To Download a .txt File, Send Here ⏍**')      
 
     try:
